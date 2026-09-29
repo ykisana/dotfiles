@@ -708,12 +708,12 @@ do
     rust_analyzer = {},
     zls = {},
     jdtls = {},
-    --
-    -- Some languages (like typescript) have entire language plugins that can be useful:
-    --    https://github.com/pmizio/typescript-tools.nvim
-    --
-    -- But for many setups, the LSP (`ts_ls`) will work just fine
-    -- ts_ls = {},
+
+    yamlls = {
+      settings = {
+        yaml = { format = { enable = true } },
+      },
+    },
 
     stylua = {}, -- Used to format Lua code
 
@@ -775,6 +775,8 @@ do
   local ensure_installed = vim.tbl_keys(servers or {})
   vim.list_extend(ensure_installed, {
     -- You can add other tools here that you want Mason to install
+    'google-java-format',
+    'ktlint',
   })
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -797,9 +799,12 @@ do
     format_on_save = function(bufnr)
       -- You can specify filetypes to autoformat on save here:
       local enabled_filetypes = {
+        java = true,
+        kotlin = true,
         lua = true,
         python = true,
         rust = true,
+        yaml = true,
         zig = true,
       }
       if enabled_filetypes[vim.bo[bufnr].filetype] then
@@ -813,12 +818,14 @@ do
     },
     -- You can also specify external formatters in here.
     formatters_by_ft = {
+      java = { 'google-java-format' },
       rust = { 'rustfmt' },
+      kotlin = { 'ktlint' },
       -- Conform can also run multiple formatters sequentially
-      -- python = { "isort", "black" },
+      python = { 'isort', 'black' },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
-      -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      javascript = { 'prettierd', 'prettier', stop_after_first = true },
     },
   }
 
