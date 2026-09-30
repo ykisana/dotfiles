@@ -704,6 +704,7 @@ do
   local servers = {
     clangd = {},
     gopls = {},
+    marksman = {},
     pyright = {},
     rust_analyzer = {},
     zls = {},
