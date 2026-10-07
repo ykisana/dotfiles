@@ -131,3 +131,7 @@ jdk() {
 }
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+v() {
+  zmx attach "nvim-$(basename "$PWD")" nvim "$@"
+}

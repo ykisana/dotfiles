@@ -1,6 +1,10 @@
+tap "facebook/fb"
 tap "hashicorp/tap"
-# New file format for still image compression
-brew "jpeg-xl"
+tap "neurosnap/tap"
+# Development kit for the Java programming language
+brew "openjdk"
+# Java build tool
+brew "ant"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
 # Automatic configure script builder
@@ -17,14 +21,10 @@ brew "ruby"
 brew "cocoapods"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Pure Scala Artifact Fetching
+brew "coursier"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Library for command-line editing
-brew "readline"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
-# OCR (Optical Character Recognition) engine
-brew "tesseract"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
@@ -35,6 +35,8 @@ brew "gh"
 brew "git"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# New file format for still image compression
+brew "jpeg-xl"
 # X.509 and CMS library
 brew "libksba"
 # Generic library support script
@@ -47,22 +49,34 @@ brew "lima-additional-guestagents"
 brew "neovim"
 # Package for scientific computing with Python
 brew "numpy"
+# Library for command-line editing
+brew "readline"
 # Development kit for the Java programming language
-brew "openjdk"
+brew "openjdk@21"
+# Development kit for the Java programming language
+brew "openjdk@25"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Build tool for Scala projects
+brew "sbt"
 # Generate clients, server stubs, and docs from an OpenAPI spec
 brew "swagger-codegen"
 # Formatting tool for reformatting Swift code
 brew "swiftformat"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
 # Terminal multiplexer
 brew "tmux"
 # Parser generator tool
@@ -71,6 +85,10 @@ brew "tree-sitter-cli"
 brew "zig"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Companion server for automating iOS Simulators
+brew "facebook/fb/idb-companion", trusted: true
+# Session attach/detach for the terminal
+brew "neurosnap/tap/zmx", trusted: true
 # Android SDK component
 cask "android-platform-tools"
 # Terminal-based AI coding assistant
@@ -79,6 +97,8 @@ cask "claude-code"
 cask "docker-desktop"
 cask "font-symbols-only-nerd-font"
 cask "hashicorp-vagrant"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin@25"
 vscode "aaron-bond.better-comments"
 vscode "anthropic.claude-code"
 vscode "bradlc.vscode-tailwindcss"
